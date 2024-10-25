@@ -287,6 +287,7 @@ defineExpose({
       :id="domId"
       ref="canvasInner"
       class="db-canvas"
+      :class="{ 'db-canvas-dashboard': !isDashboard() }"
       :style="editStyle"
       @drop="handleDrop"
       @dragover="handleDragOver"
@@ -309,7 +310,10 @@ defineExpose({
   </div>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
+.db-canvas-dashboard {
+  padding: 0 !important;
+}
 .content {
   width: 100%;
   height: 100%;
